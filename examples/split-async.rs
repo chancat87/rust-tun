@@ -96,8 +96,8 @@ async fn main_entry(cancel_token: tokio_util::sync::CancellationToken) -> Result
                         }
                     }
                 }
-                Err(err) => println!("Received an invalid packet: {:?}", err),
-                _ => println!("receive pkt {:?}", pkt),
+                Err(err) => println!("Received an invalid packet: {err:?}"),
+                _ => println!("receive pkt {pkt:?}"),
             }
         }
         Ok::<(), packet::Error>(())

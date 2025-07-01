@@ -75,7 +75,7 @@ fn main_entry(quit: Receiver<()>) -> Result<(), BoxError> {
                         }
                     }
                 }
-                Err(err) => println!("Received an invalid packet: {:?}", err),
+                Err(err) => println!("Received an invalid packet: {err:?}"),
                 _ => {}
             }
         }

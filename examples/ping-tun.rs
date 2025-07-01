@@ -87,7 +87,7 @@ async fn main_entry(token: CancellationToken) -> Result<(), BoxError> {
                             }
                         }
                     }
-                    Err(err) => println!("Received an invalid packet: {:?}", err),
+                    Err(err) => println!("Received an invalid packet: {err:?}"),
                     _ => {}
                 }
             }

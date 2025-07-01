@@ -49,16 +49,16 @@ fn main_entry(quit: Receiver<()>) -> Result<(), BoxError> {
     let mut dev = tun::create(&config)?;
 
     let r = dev.tun_index()?;
-    println!("Index: {:?}", r);
+    println!("Index: {r:?}");
 
     let r = dev.address()?;
-    println!("Address: {:?}", r);
+    println!("Address: {r:?}");
 
     let r = dev.destination()?;
-    println!("Destination: {:?}", r);
+    println!("Destination: {r:?}");
 
     let r = dev.netmask()?;
-    println!("Netmask: {:?}", r);
+    println!("Netmask: {r:?}");
 
     dev.set_address(std::net::IpAddr::V4(Ipv4Addr::new(10, 0, 0, 20)))?;
     dev.set_destination(std::net::IpAddr::V4(Ipv4Addr::new(10, 0, 0, 66)))?;
@@ -100,7 +100,7 @@ fn main_entry(quit: Receiver<()>) -> Result<(), BoxError> {
                         }
                     }
                 }
-                Err(err) => println!("Received an invalid packet: {:?}", err),
+                Err(err) => println!("Received an invalid packet: {err:?}"),
                 _ => {}
             }
         }
